@@ -1,0 +1,1 @@
+{"model":"classifier","version":"v2","runtime":"onnxruntime","format":"onnx","min_ram_mb":8192,"package_size_mb":12,"digest":"fixture-sha256-placeholder","signing_key_id":"local-demo-v1"}
