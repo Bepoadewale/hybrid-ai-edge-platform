@@ -22,7 +22,7 @@ FOUNDATION
 
 ## Known Failures
 
-- Model manifest uses a placeholder digest; remote fetch blocked by DNS on 2026-09-19.
+- Model manifest uses a placeholder digest because model signing is not implemented. GitHub CI rerun is pending after changing the initialization workflow to install test tooling without packaging fixture directories.
 
 ## Current P0 Objective
 
