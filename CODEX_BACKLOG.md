@@ -1,4 +1,15 @@
+# Completion Target
+
+PORTFOLIO COMPLETE — LOCAL-FIRST SCOPE
+
+# Current Completion Blockers
+
+- Run control plane and multiple independent agents with real ONNX inference and signed package reconciliation.
+- Demonstrate permitted fallback, privacy denial, offline buffering/reconnect, heterogeneous rollout, tamper rejection, and bad-OTA rollback.
+
 # P0 — Required for Portfolio Claim
+
+P0 blocks PORTFOLIO COMPLETE — LOCAL-FIRST SCOPE; do not select P1/P2 work first.
 
 - Verify current ONNX Runtime and create a tiny real local model fixture.
 - Build FastAPI control plane plus one independent device agent with registration/heartbeat.
