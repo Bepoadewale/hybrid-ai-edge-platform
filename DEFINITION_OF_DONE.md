@@ -20,3 +20,11 @@
 - **PARTIALLY VALIDATED:** real agent/runtime integration exists but central fleet story is incomplete.
 - **LOCAL END-TO-END VALIDATED:** primary fleet path runs with material rollback/offline/observability gaps.
 - **PORTFOLIO COMPLETE — LOCAL-FIRST SCOPE:** every checked gate is executed with evidence.
+
+# Clean-Room Reproducibility Gate
+
+`PORTFOLIO COMPLETE — LOCAL-FIRST SCOPE` requires two executed clean-room cycles: clone → install → bootstrap control plane, independent device agents, signed ONNX fixture, cloud fallback → smoke → local inference/privacy denial/staged rollout/offline demo → bad-OTA rollback demo → validation → project-scoped cleanup → second clean bootstrap/demo. Planned commands: `make install`, `make bootstrap-local`, `make smoke`, `make demo-fleet`, `make demo-rollout`, `make demo-offline`, `make verify`, `make clean-local`.
+
+- [ ] Clean clone/bootstrap has no hidden state; primary and failure demos pass.
+- [ ] Cleanup removes only this project and unrelated resources survive.
+- [ ] Post-cleanup absence and second bootstrap/demo are recorded in `docs/VALIDATION.md`.
