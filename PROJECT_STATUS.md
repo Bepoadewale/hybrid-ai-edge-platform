@@ -4,6 +4,10 @@
 
 FOUNDATION
 
+## Maturity Model
+
+`FOUNDATION` → `PARTIALLY VALIDATED` → `LOCAL END-TO-END VALIDATED` → `PORTFOLIO COMPLETE — LOCAL-FIRST SCOPE`.
+
 ## Executed and Verified
 
 - Capability matching, deterministic routing and desired-state/domain tests.
@@ -27,6 +31,15 @@ FOUNDATION
 ## Current P0 Objective
 
 Run one independently registered agent using a tiny signed ONNX package for local inference.
+
+## Completion Blockers
+
+- FastAPI control plane, independent device agents, ONNX inference, signing, cloud fixture, and telemetry are not live.
+- Desired-state activation, multi-device compatibility, privacy routing, offline buffering/reconnect, staged OTA, tamper rejection, and rollback are unexecuted.
+
+## Explicitly Unexecuted Production Adapters
+
+- Real mobile/NPU hardware, llama.cpp/ExecuTorch, battery/thermal sensors, cloud fleet control plane, and production PKI.
 
 ## Last Validation
 
