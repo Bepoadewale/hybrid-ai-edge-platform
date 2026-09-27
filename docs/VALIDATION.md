@@ -40,6 +40,7 @@ hardware profile is evidence by itself.
 ## Executed Clean-Room Evidence
 
 - **Date:** 2026-09-27
+- **Implementation commit:** `f8da794` (`feat: execute local hybrid edge fleet lifecycle`).
 - **Environment:** macOS; Python 3.14.0; ONNX Runtime 1.30.0; CPUExecutionProvider.
 - **Starting state:** project `.local` and generated `models/packages` absent; no agent/control-plane process retained by this project.
 

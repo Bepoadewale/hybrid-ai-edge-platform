@@ -50,7 +50,7 @@ None for `PORTFOLIO COMPLETE — LOCAL-FIRST SCOPE`.
 
 ## Last Updated
 
-2026-09-27, Week 10 completion pass (commit SHA added when committed).
+2026-09-27, Week 10 completion implementation: `f8da794`.
 
 ## Clean-Room Reproducibility
 
