@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 from enum import StrEnum
+
+
 class Route(StrEnum): LOCAL="LOCAL"; CLOUD="CLOUD"; DENY="DENY"
 class Activation(StrEnum): NOT_INSTALLED="NOT_INSTALLED"; VERIFYING="VERIFYING"; STAGED="STAGED"; ACTIVE="ACTIVE"; FAILED="FAILED"; ROLLED_BACK="ROLLED_BACK"
 @dataclass

@@ -2,58 +2,58 @@
 
 ## Current Maturity
 
-FOUNDATION
-
-## Maturity Model
-
-`FOUNDATION` → `PARTIALLY VALIDATED` → `LOCAL END-TO-END VALIDATED` → `PORTFOLIO COMPLETE — LOCAL-FIRST SCOPE`.
+PORTFOLIO COMPLETE — LOCAL-FIRST SCOPE
 
 ## Executed and Verified
 
-- Capability matching, deterministic routing and desired-state/domain tests.
+- Five independent local device-agent processes registered, heartbeated and reconciled with a FastAPI/SQLite fleet control plane.
+- Agents authenticated control-plane registration, desired-state, package and verification-key requests with a generated local device token; the token is never committed.
+- An unauthenticated device desired-state request was rejected with `401` during smoke validation.
+- Tiny generated ONNX classifier executed through ONNX Runtime `1.30.0` using `CPUExecutionProvider`; actual local latency was returned by the agent.
+- Ed25519 model package signing and SHA-256 verification executed. Post-signing artifact tampering was rejected before activation.
+- Local inference, cloud fallback fixture, and restricted/`LOCAL_ONLY` privacy denial executed.
+- Heterogeneous canary/expand rollout, mobile-low incompatibility, offline return, bad-model readiness rollback, and offline buffered inference/reconnect executed.
+- Local aggregate fleet dashboard renders running device/route/rollback evidence; profile hardware inputs are marked simulated.
 
 ## Implemented but Not End-to-End Validated
 
-- Model/device policy core.
+None within the local-first completion boundary.
 
 ## Simulated
 
-- Device profiles, hardware states and package digest values.
+- Device hardware architecture, memory, network quality, battery and thermal inputs. All execute on one development machine.
 
 ## Architecture / Contracts Only
 
-- FastAPI control plane, device processes, ONNX inference, cloud fixture, signing, OTA, telemetry and rollback.
+- llama.cpp, ExecuTorch, real mobile/NPU integration, cloud fleet hosting, production PKI/key rotation and production observability backends.
 
 ## Known Failures
 
-- Model manifest uses a placeholder digest because model signing is not implemented. GitHub CI rerun is pending after changing the initialization workflow to install test tooling without packaging fixture directories.
+- None from the current real local demo sequence.
 
 ## Current P0 Objective
 
-Run one independently registered agent using a tiny signed ONNX package for local inference.
+Preserve the completed local-first proof while addressing only regressions or security fixes.
 
 ## Completion Blockers
 
-- FastAPI control plane, independent device agents, ONNX inference, signing, cloud fixture, and telemetry are not live.
-- Desired-state activation, multi-device compatibility, privacy routing, offline buffering/reconnect, staged OTA, tamper rejection, and rollback are unexecuted.
+None for `PORTFOLIO COMPLETE — LOCAL-FIRST SCOPE`.
 
 ## Explicitly Unexecuted Production Adapters
 
-- Real mobile/NPU hardware, llama.cpp/ExecuTorch, battery/thermal sensors, cloud fleet control plane, and production PKI.
+- Real edge hardware, mobile operating systems, CoreML/NNAPI/QNN, llama.cpp, ExecuTorch, cloud control plane, real battery/thermal signals, and managed key infrastructure.
 
 ## Last Validation
 
-- `PYTHONPATH=control-plane/src ../ai-platform-control-plane/.venv/bin/python -m pytest -q`: 4 passed.
+- `make verify`: Ruff clean; pytest `7 passed`, including real ONNX Runtime execution, signed-package tamper rejection, and deterministic routing profiles.
+- `make cleanroom-validate`: passed twice from clean project state; both ran fleet, bad-OTA, tamper, offline and teardown scenarios.
 
 ## Last Updated
 
-2026-09-19, baseline `47ff5cb`.
+2026-09-27, Week 10 completion implementation: `f8da794`.
 
 ## Clean-Room Reproducibility
 
-**Status: NOT YET VALIDATED**
+**Status: VALIDATED**
 
-Completion requires two executed clean-room cycles: clean start → bootstrap → smoke → primary demo
-→ failure/security demo → validation → project-scoped cleanup, followed by a second clean bootstrap
-and demo. Existing developer state is not evidence. This status must be `VALIDATED` before
-`PORTFOLIO COMPLETE — LOCAL-FIRST SCOPE` is allowed.
+Two clean-state cycles passed with project-scoped cleanup and post-cleanup absence verification.
