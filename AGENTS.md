@@ -2,9 +2,9 @@
 
 Mission: operate policy-controlled local/cloud inference and safe model rollout across heterogeneous simulated devices; distinguish simulated hardware from real platform behavior.
 
-Stack: Python 3.12 foundation; future FastAPI, ONNX Runtime, device-agent processes, SQLite and local cloud fixture.
+Stack: Python 3.12+, FastAPI, SQLite, Ed25519 model signatures, ONNX Runtime CPU, independent device-agent processes and a local cloud fixture. Device hardware properties are simulated; platform communication, package verification and inference are real local behavior.
 
-Commands: `PYTHONPATH=control-plane/src python3 -m pytest -q`; add real process/demo targets only after they execute.
+Commands: `make install`, `make bootstrap-local`, `make smoke`, `make demo-fleet`, `make demo-rollout`, `make demo-bad-rollout`, `make demo-tamper`, `make demo-offline`, `make verify`, `make clean-local`.
 
 Rules: no fake inference/OTA/rollback claims; model packages require real signatures and digest verification; privacy overrides fallback; no secrets/main pushes; update factual status/backlog after validation.
 

@@ -1,4 +1,6 @@
 from edge_platform.core import Activation, Device, Model, Route, compatible, reconcile, route
+
+
 def model():return Model("classifier","v2",8192,12,"good")
 def test_heterogeneous_compatibility():assert compatible(Device("low","mobile-low",4096,4096),model())=="INSUFFICIENT_MEMORY"
 def test_privacy_overrides_cloud_availability():assert route(Device("low","mobile-low",4096,4096),model(),"restricted","LOCAL_PREFERRED")==Route.DENY
