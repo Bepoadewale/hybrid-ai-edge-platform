@@ -1,4 +1,4 @@
-.PHONY: install bootstrap-local smoke demo-fleet demo-rollout demo-bad-rollout demo-tamper demo-offline verify clean-local cleanroom-validate
+.PHONY: install bootstrap-local smoke demo-fleet demo-rollout demo-bad-rollout demo-tamper demo-offline verify clean-local cleanroom-validate public-demo
 install:
 	python3 -m venv .venv
 	.venv/bin/python -m pip install --upgrade pip
@@ -24,3 +24,6 @@ clean-local:
 	./scripts/clean-local.sh
 cleanroom-validate:
 	./scripts/cleanroom-validate.sh
+
+public-demo:
+	./scripts/start-public-demo.sh

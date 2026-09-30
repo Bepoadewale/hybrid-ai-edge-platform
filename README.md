@@ -40,6 +40,10 @@ make clean-local
 
 Dashboard: `http://localhost:18100/`
 
+### Temporary public fleet dashboard
+
+`make public-demo` bootstraps the simulated fleet, executes local inference and rollout demonstrations, and prints a temporary Cloudflare Quick Tunnel URL for its aggregate dashboard. No Cloudflare account, named tunnel, or persistent credential is used. The URL is public, disposable, changes each run, and must never be committed. It is for local fixture evidence only; device hardware, thermal, network, and battery inputs remain simulated. `Ctrl-C` stops only the tunnel; `make clean-local` removes project-owned processes and state.
+
 ## Executed scenarios
 
 | Scenario | Result |
